@@ -1,4 +1,6 @@
 ﻿using System;
+using System.IO;
+
 
 namespace rename_files
 {
@@ -6,7 +8,17 @@ namespace rename_files
     {
         static void Main(string[] args)
         {
-	    Console.WriteLine("Hello, World");
+	    String directory = args[0];
+
+	    if (Directory.Exists(directory))
+	    {
+	      Console.WriteLine("É uma pasta"); 
+            }
+	    else 
+	    {
+	      Console.WriteLine("Não é uma pasta");
+	      Console.WriteLine("Insira um caminho válido");
+	    }
         }
     }
 }
