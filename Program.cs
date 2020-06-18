@@ -6,13 +6,26 @@ namespace rename_files
 {
     class Program
     {
+
+	private static void getFiles(string path)
+	{
+            string[] files = Directory.GetFiles(path);
+            Array.Sort(files);    
+
+	    foreach (string file in files)
+	    {
+	      Console.WriteLine(file);
+	    }
+	}
+
+
         static void Main(string[] args)
         {
-	    String directory = args[0];
+	    string directory = args[0];
 
 	    if (Directory.Exists(directory))
 	    {
-	      Console.WriteLine("É uma pasta"); 
+	      getFiles(directory);
             }
 	    else 
 	    {
